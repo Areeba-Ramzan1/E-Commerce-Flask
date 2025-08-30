@@ -21,19 +21,8 @@ window.addEventListener('click', function(event) {
     }
 });
 
-// Function to simulate adding a product to the cart
-function addToCart() {
-    alert("Product added to cart!");
-    // Here you would typically send an AJAX request to your backend to update the cart
- }
- 
- // Function to simulate removing a product from the cart
- function removeFromCart() {
-    alert("Product removed from cart!");
-    // Here you would typically send an AJAX request to your backend to update the cart
- }
- 
- function addToCart(name, price, image) {
+// Function to add a product to the cart
+function addToCart(name, price, image) {
     // Get the existing cart from localStorage or create a new one
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
@@ -45,8 +34,9 @@ function addToCart() {
 
     alert(`${name} has been added to your cart!`);
 }
- // Function to display items in the cart
- function displayCartItems() {
+
+// Function to display items in the cart
+function displayCartItems() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const cartContainer = document.getElementById('cart-items');
     
