@@ -17,13 +17,14 @@
             
             <!-- Menu Items (Hidden on Mobile) -->
             <ul class="hidden md:flex space-x-6">
-                <li><a href="/#about" class="hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i> About</a></li>
-                <li><a href="/#contact" class="hover:text-green-200"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+                <li><a href="{{ url_for('home') }}#about" class="hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i> About</a></li>
+                <li><a href="{{ url_for('home') }}#contact" class="hover:text-green-200"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
                 <li class="relative">
-                    <li><a href="/categories" class="hover:text-green-200"><i class="fa fa-fw fa-bars"></i>Categories</a></li>
-                <li><a href="/login" class="hover:text-green-200"><i class="fa fa-fw fa-user"></i> Login</a></li>
-                <li><a href="search.html" class="hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a></li>
-                <li><a href="cart.html" class="hover:text-green-200"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a></li>
+                <li><a href="{{ url_for('categories') }}" class="hover:text-green-200"><i class="fa fa-fw fa-bars"></i> Categories</a></li>
+                <li><a href="{{ url_for('login') }}" class="hover:text-green-200"><i class="fa fa-fw fa-user"></i> Login</a></li>
+                <li><a href="{{ url_for('search') }}" class="hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a></li>
+                <li><a href="{{ url_for('cart') }}" class="hover:text-green-200"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a></li>
+
             </ul>
 
             <!-- Mobile Menu Button -->
@@ -34,11 +35,12 @@
 
         <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="hidden md:hidden mt-4 bg-green-800 text-white p-4 space-y-4">
-            <a href="#about" class="block hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i> About</a>
-            <a href="#contact" class="block hover:text-green-200"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-            <a href="/login" class="block hover:text-green-200"><i class="fa fa-fw fa-user"></i> Login</a>
-            <a href="/search" class="block hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a>
-            <a href="/cart" class="block hover:text-green-200"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a>
+            <a href="{{ url_for('home') }}#about" class="block hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i> About</a>
+            <a href="{{ url_for('home') }}#contact" class="block hover:text-green-200"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+            <a href="{{ url_for('login') }}" class="hover:text-green-200"><i class="fa fa-fw fa-user"></i> Login</a>
+            <a href="{{ url_for('search') }}" class="hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a>
+            <a href="{{ url_for('cart') }}" class="hover:text-green-200"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a>
+
         </div>
     </nav>
     <div class="container mx-auto py-8 bg-white">
@@ -46,8 +48,8 @@
     
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-5">
             <div class="category-item border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow h-80">
-                <a href="/bag">
-                    <img class="w-full h-64 object-cover" src="/static/img/bag.jpg" alt="Bags">
+                <a href="{{ url_for('bag') }}">
+                <img class="w-full h-64 object-cover" src="/static/img/bag.jpg" alt="Bags">
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-semibold">Bags</h3>
                     </div>
@@ -55,8 +57,8 @@
             </div>
     
             <div class="category-item border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow h-80">
-                <a href="/fragrances">
-                    <img class="w-full h-64 object-cover" src="/static/img/fragrance.jpg" alt="Fragrances">
+                <a href="{{ url_for('fragrances') }}">
+                <img class="w-full h-64 object-cover" src="/static/img/fragrance.jpg" alt="Fragrances">
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-semibold">Fragrances</h3>
                     </div>
@@ -64,7 +66,7 @@
             </div>
     
             <div class="category-item border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow h-80">
-                <a href="/dress">
+                 <a href="{{ url_for('dress') }}">
                     <img class="w-full h-64 object-cover" src="/static/img/dresses/EC21.jpg" alt="Dresses">
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-semibold">Dresses</h3>
@@ -73,7 +75,7 @@
             </div>
     
             <div class="category-item border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow h-80">
-                <a href="/jewelry">
+                <a href="{{ url_for('jewelry') }}">
                     <img class="w-full h-64 object-cover" src="/static/img/jewelry.jpg" alt="Jewelry">
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-semibold">Jewelry</h3>
@@ -82,8 +84,8 @@
             </div>
     
             <div class="category-item border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow h-80">
-                <a href="/watches">
-                    <img class="w-full h-64 object-cover" src="/static/img/watches/wat18.jpg" alt="Watches">
+                <a href="{{ url_for('watches') }}">
+                <img class="w-full h-64 object-cover" src="/static/img/watches/wat18.jpg" alt="Watches">
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-semibold">Watches</h3>
                     </div>
@@ -91,8 +93,8 @@
             </div>
     
             <div class="category-item border rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow h-80">
-                <a href="/shoes">
-                    <img class="w-full h-64 object-cover" src="/static/img/shoes.jpg" alt="Shoes">
+                <a href="{{ url_for('shoes') }}">
+                <img class="w-full h-64 object-cover" src="/static/img/shoes.jpg" alt="Shoes">
                     <div class="p-4 text-center">
                         <h3 class="text-lg font-semibold">Shoes</h3>
                     </div>
@@ -112,8 +114,8 @@
 
                 <!-- Navigation Links -->
                 <div class="flex space-x-6 mt-4 sm:mt-0">
-                    <a href="/#about" class="text-white hover:text-white">About</a>
-                    <a href="/#contact" class="text-white hover:text-white">Contact</a>
+                    <a href="{{ url_for('home') }}#about" class="text-white hover:text-white">About</a>
+                    <a href="{{ url_for('home') }}#contact" class="text-white hover:text-white">Contact</a>
                 </div>
 
                 <!-- Social Media Links -->
@@ -146,6 +148,6 @@
     </footer>
 
     <!-- Include JavaScript file -->
-    <script src="/static/JS/script.js"></script>
+<script src="{{ url_for('static', filename='JS/script.js') }}"></script>
 </body>
 </html> 

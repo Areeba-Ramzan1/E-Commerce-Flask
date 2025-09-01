@@ -16,12 +16,13 @@
         </a>
 
         <ul class="hidden md:flex space-x-6">
-            <li><a href="/home#about" class="hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i> About</a></li>
-            <li><a href="/home#contact" class="hover:text-green-200"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
-            <li><a href="/categories" class="hover:text-green-200"><i class="fa fa-fw fa-bars"></i>Categories</a></li>
-            <li><a href="/login" class="hover:text-green-200"><i class="fa fa-fw fa-user"></i> Login</a></li>
-            <li><a href="/search" class="hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a></li>
-            <li><a href="/cart" class="hover:text-green-200"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a></li>
+            <li><a href="{{ url_for('home') }}#about" class="hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i> About</a></li>
+            <li><a href="{{ url_for('home') }}#contact" class="hover:text-green-200"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+            <li><a href="{{ url_for('categories') }}" class="hover:text-green-200"><i class="fa fa-fw fa-bars"></i> Categories</a></li>
+            <li><a href="{{ url_for('login') }}" class="hover:text-green-200"><i class="fa fa-fw fa-user"></i> Login</a></li>
+            <li><a href="{{ url_for('search') }}" class="hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a></li>
+            <li><a href="{{ url_for('cart') }}" class="hover:text-green-200"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a></li>
+
         </ul>
 
         <button class="md:hidden text-xl hover:text-green-200" id="menu-btn">
@@ -89,8 +90,8 @@
             </div>
 
             <div class="flex space-x-6 mt-4 sm:mt-0">
-                <a href="/home#about" class="text-white hover:text-white">About</a>
-                <a href="/home#contact" class="text-white hover:text-white">Contact</a>
+                <a href="{{ url_for('home') }}#about" class="text-white hover:text-white">About</a>
+                <a href="{{ url_for('home') }}#contact" class="text-white hover:text-white">Contact</a>
             </div>
         </div>
 

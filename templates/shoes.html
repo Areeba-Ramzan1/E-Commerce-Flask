@@ -14,12 +14,13 @@
                 <i class="fa fa-fw fa-shopping-bag"></i> FashionDash.
             </a>
             <ul class="hidden md:flex space-x-6">
-                <li><a href="/home#about" class="hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i> About</a></li>
-                <li><a href="/home#contact" class="hover:text-green-200"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
-                <li><a href="/categories" class="hover:text-green-200"><i class="fa fa-fw fa-bars"></i> Categories</a></li>
-                <li><a href="/login" class="hover:text-green-200"><i class="fa fa-fw fa-user"></i> Login</a></li>
-                <li><a href="/search" class="hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a></li>
-                <li><a href="/cart" class="hover:text-green-200"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a></li>
+                <li><a href="{{ url_for('home') }}#about" class="hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i> About</a></li>
+                <li><a href="{{ url_for('home') }}#contact" class="hover:text-green-200"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+                <li><a href="{{ url_for('categories') }}" class="hover:text-green-200"><i class="fa fa-fw fa-bars"></i> Categories</a></li>
+                <li><a href="{{ url_for('login') }}" class="hover:text-green-200"><i class="fa fa-fw fa-user"></i> Login</a></li>
+                <li><a href="{{ url_for('search') }}" class="hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a></li>
+                <li><a href="{{ url_for('cart') }}" class="hover:text-green-200"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a></li>
+
             </ul>
         </div>
     </nav>
@@ -35,7 +36,7 @@
                     <!-- Example for one card -->
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/shoes/ECS19.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/shoes/ECS19.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Low Cut Rubber Sole Shoes</h3>
@@ -46,7 +47,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/shoes/ECS3.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/shoes/ECS3.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Sneaker Boot Heals</h3>
@@ -57,7 +58,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/shoes/ECS4.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/shoes/ECS4.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Arch Fit Shoes</h3>
@@ -68,7 +69,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/shoes/ECS5.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/shoes/ECS5.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Chunky Sole Casual Sneakers</h3>
@@ -79,7 +80,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/shoes/ECS6.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/shoes/ECS6.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Athletic Shoes</h3>
@@ -90,7 +91,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/shoes/ECS7.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/shoes/ECS7.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Easy Walking Shoes</h3>
@@ -101,7 +102,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/shoes/ECS8.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/shoes/ECS8.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
 
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
@@ -113,7 +114,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/shoes/ECS9.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/shoes/ECS9.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Premium Lightweight Running Shoes</h3>
@@ -124,7 +125,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/shoes/ECS11.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/shoes/ECS11.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Non-Slip Low-Top Sneaker</h3>
@@ -135,7 +136,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/shoes/ECS12.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/shoes/ECS12.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Comfortable And Stylish Shoes</h3>
@@ -146,7 +147,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/shoes/ECS13.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/shoes/ECS13.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Stylish and Trendy Sneakers</h3>
@@ -157,7 +158,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/shoes/ECS14.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/shoes/ECS14.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Gradient Color Lightweight Shoes</h3>
@@ -168,7 +169,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/shoes/ECS15.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/shoes/ECS15.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Comfortable Footwear</h3>
@@ -179,7 +180,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/shoes/ECS16.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/shoes/ECS16.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Fashionable Unisex Shoes</h3>
@@ -190,7 +191,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/shoes/ECS17.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/shoes/ECS17.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Flat Casual Shoes</h3>
@@ -201,7 +202,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/shoes/ECS10.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/shoes/ECS10.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Lace Up Comfy Shoes</h3>
@@ -228,8 +229,8 @@
 
                 <!-- Navigation Links -->
                 <div class="flex space-x-6 mt-4 sm:mt-0">
-                    <a href="/home#about" class="text-white hover:text-white">About</a>
-                    <a href="/home#contact" class="text-white hover:text-white">Contact</a>
+                    <a href="{{ url_for('home') }}#about" class="text-white hover:text-white">About</a>
+                    <a href="{{ url_for('home') }}#contact" class="text-white hover:text-white">Contact</a>
                 </div>
 
                 <!-- Social Media Links -->
@@ -260,7 +261,7 @@
             </div>
         </div>
     </footer>
-<script src="/static/JSn/ew.js"></script>
+<script src="{{ url_for('static', filename='JS/new.js') }}"></script>
 
 </body>
 </html>

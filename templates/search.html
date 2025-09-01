@@ -16,17 +16,15 @@
                 <i class="fa fa-fw fa-shopping-bag"></i> FashionDash.
             </a>
             <ul class="hidden md:flex space-x-6">
-                <li><a href="/#about" class="hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i>
+                <li><a href="{{ url_for('home') }}#about" class="hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i>
                         About</a></li>
-                <li><a href="/#contact" class="hover:text-green-200"><i class="fa fa-fw fa-envelope"></i>
+                <li><a href="{{ url_for('home') }}#contact" class="hover:text-green-200"><i class="fa fa-fw fa-envelope"></i>
                         Contact</a></li>
-                <li><a href="/categories" class="hover:text-green-200"><i class="fa fa-fw fa-bars"></i>
-                        Categories</a></li>
-                <li><a href="/login" class="hover:text-green-200"><i class="fa fa-fw fa-user"></i> Login</a></li>
-                <li><a href="/search" class="hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a>
-                </li>
-                <li><a href="/cart" class="hover:text-green-200"><i class="fa fa-fw fa-shopping-cart"></i>
-                        Cart</a></li>
+                <li><a href="{{ url_for('categories') }}" class="hover:text-green-200"><i class="fa fa-fw fa-bars"></i> Categories</a></li>
+                <li><a href="{{ url_for('login') }}" class="hover:text-green-200"><i class="fa fa-fw fa-user"></i> Login</a></li>
+                <li><a href="{{ url_for('search') }}" class="hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a></li>
+                <li><a href="{{ url_for('cart') }}" class="hover:text-green-200"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a></li>
+
             </ul>
 
             <!-- Mobile Menu Button -->
@@ -37,11 +35,12 @@
 
         <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="hidden md:hidden mt-4 bg-green-800 text-white p-4 space-y-4">
-            <a href="#about" class="block hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i> About</a>
-            <a href="#contact" class="block hover:text-green-200"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-            <a href="/login" class="block hover:text-green-200"><i class="fa fa-fw fa-user"></i> Login</a>
-            <a href="/search" class="block hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a>
-            <a href="/cart" class="block hover:text-green-200"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a>
+            <a href="{{ url_for('home') }}#about" class="block hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i> About</a>
+            <a href="{{ url_for('home') }}#contact" class="block hover:text-green-200"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+            <li><a href="{{ url_for('login') }}" class="hover:text-green-200"><i class="fa fa-fw fa-user"></i> Login</a></li>
+            <li><a href="{{ url_for('search') }}" class="hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a></li>
+            <li><a href="{{ url_for('cart') }}" class="hover:text-green-200"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a></li>
+
         </div>
     </nav>
 
@@ -87,535 +86,583 @@
 
     <script>
         // Sample Product Data (You can later replace this with a fetch request to a database or API)
-        const products = [
-            {
-                name: "Simple and Fresh Style Bag",
-                price: 2500,
-                image: "/static/img/bags/bag2.jpg",
-                category: "Bags"
-            },
-            {
-                name: "Fresh Summer Bag",
-                price: 3000,
-                image: "/static/img/bags/bag25.jpg",
-                category: "Bags"
-            },
-            {
-                name: "Simple Leisure Wind Case Bag",
-                price: 3500,
-                image: "/static/img/bags/bag19.jpg",
-                category: "Bags"
-            },
-            {
-                name: "Beautiful Simple Fashion Bag",
-                price: 3000,
-                image: "/static/img/bags/bag4.jpg",
-                category: "Bags"
-            },
-            {
-                name: "Dreamy Drapes Bag",
-                price: 4500,
-                image: "/static/img/bags/bag20.jpg",
-                category: "Bags"
-            },
-            {
-                name: "Elegant Ego Bag",
-                price: 5000,
-                image: "/static/img/bags/bag6.jpg",
-                category: "Bags"
-            },
-            {
-                name: "Stylish Handbag Emporium",
-                price: 7000,
-                image: "/static/img/bags/bag7.jpg",
-                category: "Bags"
-            },
-            {
-                name: "Elegant Carry Collection",
-                price: 3500,
-                image: "/static/img/bags/bag8.jpg",
-                category: "Bags"
-            },
-            {
-                name: "The Dapper Handbag",
-                price: 4000,
-                image: "/static/img/bags/bag16.jpg",
-                category: "Bags"
-            },
-            {
-                name: "LuxeLane Bag",
-                price: 6000,
-                image: "/static/img/bags/bag10.jpg",
-                category: "Bags"
-            },
-            {
-                name: "Carry Couture",
-                price: 3800,
-                image: "/static/img/bags/bag17.jpg",
-                category: "Bags"
-            },
-            {
-                name: "Luxe Bag Haven",
-                price: 6000,
-                image: "/static/img/bags/bag12.jpg",
-                category: "Bags"
-            },
-            {
-                name: "Beatiful Simple Handbag",
-                price: 3000,
-                image: "/static/img/bags/bag23.jpg",
-                category: "Bags"
-            },
-            {
-                name: "Fresh Summer Bag",
-                price: 4500,
-                image: "/static/img/bags/bag15.jpg",
-                category: "Bags"
-            },
-            {
-                name: "Fresh Style Bag",
-                price: 3000,
-                image: "/static/img/bags/bag18.jpg",
-                category: "Bags"
-            },
-            {
-                name: "Timeless Prestige",
-                price: 4500,
-                image: "/static/img/fragrances/per1.jpg",
-
-                category: "Fragrances"
-            },
-            {
-                name: "Enchanted Essence",
-                price: 3500,
-                image: "/static/img/fragrances/per3.jpg",
-
-                category: "Fragrances"
-            },
-            {
-                name: "Scented Secrets",
-                price: 3000,
-                image: "/static/img/fragrances/per19.jpg",
-
-                category: "Fragrances"
-            },
-            {
-                name: "Serene Temptation",
-                price: 2500,
-                image: "/static/img/fragrances/per22.jpg",
-
-                category: "Fragrances"
-            },
-            {
-                name: "Whispering Petals",
-                price: 7000,
-                image: "/static/img/fragrances/per6.jpg",
-
-                category: "Fragrances"
-            },
-            {
-                name: "Velvet Veil",
-                price: 6000,
-                image: "/static/img/fragrances/per7.jpg",
-
-                category: "Fragrances"
-            },
-            {
-                name: "Twilight Mist",
-                price: 5500,
-                image: "/static/img/fragrances/per8.jpg",
-
-                category: "Fragrances"
-            },
-            {
-                name: "Captivating Cascade",
-                price: 6000,
-                image: "/static/img/fragrances/per9.jpg",
-
-                category: "Fragrances"
-            },
-            {
-                name: "Celestial Blossom",
-                price: 4500,
-                image: "/static/img/fragrances/per10.jpg",
-
-                category: "Fragrances"
-            },
-            {
-                name: "Scented Dreams",
-                price: 6000,
-                image: "/static/img/fragrances/per11.jpg",
-
-                category: "Fragrances"
-            },
-            {
-                name: "Timeless Essence",
-                price: 7000,
-                image: "/static/img/fragrances/per12.jpg",
-
-                category: "Fragrances"
-            },
-            {
-                name: "Sublime Infusion",
-                price: 5000,
-                image: "/static/img/fragrances/per13.jpg",
-
-                category: "Fragrances"
-            },
-            {
-                name: "Charming Bouquet",
-                price: 7000,
-                image: "/static/img/fragrances/per14.jpg",
-
-                category: "Fragrances"
-            },
-            {
-                name: "Secret Gardenia",
-                price: 8000,
-                image: "/static/img/fragrances/per18.jpg",
-
-                category: "Fragrances"
-            },
-            {
-                name: "Enchanting Whisper",
-                price: 5000,
-                image: "/static/img/fragrances/per16.jpg",
-
-                category: "Fragrances"
-            },
-            {
-                name: "Short Dress",
-                price: 4500,
-                image: "/static/img/dresses/EC19.jpg",
-            },
-            {
-                name: "Anarkali Frock",
-                price: 3300,
-                image: "/static/img/dresses/EC2.jpg",
-            },
-            {
-                name: "Light Embroided",
-                price: 4400,
-                image: "/static/img/dresses/EC22.jpg",
-            },
-            {
-                name: "Casual Kurti",
-                price: 2800,
-                image: "/static/img/dresses/EC4.jpg",
-            },
-            {
-                name: "Cotton Kurti",
-                price: 3500,
-                image: "/static/img/dresses/EC5.jpg",
-            },
-            {
-                name: "Raw Silk Peplum with Dhaka Pajama",
-                price: 4400,
-                image: "/static/img/dresses/EC23.jpg",
-            },
-            {
-                name: "Printed Kurti",
-                price: 2700,
-                image: "/static/img/dresses/EC7.jpg",
-            },
-            {
-                name: "Classic Straight Cut Shalwar Kameez",
-                price: 4900,
-                image: "/static/img/dresses/EC25.jpg",
-            },
-            {
-                name: "Casual Khaddar Printed Suit",
-                price: 4700,
-                image: "/static/img/dresses/EC15.jpg",
-            },
-            {
-                name: "Chicken Suit with Embroidered",
-                price: 5000,
-                image: "/static/img/dresses/EC10.jpg",
-            },
-            {
-                name: "Light Simple Kurti",
-                price: 2500,
-                image: "/static/img/dresses/EC11.jpg",
-            },
-            {
-                name: "Formal Net Kurti with Trouser",
-                price: 5000,
-                image: "/static/img/dresses/EC12.jpg",
-            },
-            {
-                name: "Organza Dupatta Three-Piece Suit",
-                price: 3400,
-                image: "/static/img/dresses/EC13.jpg",
-            },
-            {
-                name: "Black Printed Kurti with Chiffon Dupatta",
-                price: 4500,
-                image: "/static/img/dresses/EC14.jpg",
-            },
-            {
-                name: "Traditional Kurta Pajama Set",
-                price: 6500,
-                image: "/static/img/dresses/EC1.jpg",
-            },
-            {
-                name: "Chikankari Embellished Kurti",
-                price: 4400,
-                image: "/static/img/dresses/EC16.jpg",
-            },
-            {
-                name: "Dior Necklace",
-                price: 4000,
-                image: "/static/img/jewelry/ECJ1.jpg",
-                altText: "Dior Necklace",
-            },
-            {
-                name: "5-Piece jewelry Set",
-                price: 10000,
-                image: "/static/img/jewelry/ECJ2.jpg",
-                altText: "5-Piece jewelry Set",
-
-            },
-            {
-                name: "Beige Simple Bracelet",
-                price: 1500,
-                image: "/static/img/jewelry/ECJ6.jpg"
-            },
-            {
-                name: "4-Piece jewelry Set",
-                price: 12000,
-                image: "/static/img/jewelry/ECJ4.jpg",
-                altText: "4-Piece jewelry Set",
-
-            },
-            {
-                name: "Simple Bracelet",
-                price: 1200,
-                image: "/static/img/jewelry/ECJ5.jpg",
-                altText: "Simple Bracelet",
-            },
-            {
-                name: "6-Piece jewelry Set",
-                price: 3500,
-                image: "/static/img/jewelry/ECJ3.jpg",
-                altText: "6-Piece jewelry Set",
-
-            },
-            {
-                name: "Pearls Stylish Bracelet",
-                price: 2000,
-                image: "/static/img/jewelry/ECJ7.jpg",
-
-                altText: "Pearls Stylish Bracelet",
-            },
-            {
-                name: "Crown Necklace With Earrings",
-                price: 17000,
-                image: "/static/img/jewelry/ECJ19.jpg",
-
-                altText: "Crown Necklace With Earrings",
-            },
-            {
-                name: "White Butterfly Stylish Bracelet",
-                price: 1800,
-                image: "/static/img/jewelry/ECJ9.jpg",
-
-                altText: "White Butterfly Stylish Bracelet",
-            },
-            {
-                name: "Rings Box",
-                price: 4000,
-                image: "/static/img/jewelry/ECJ10.jpg",
-
-                altText: "Rings Box",
-            },
-            {
-                name: "Layered Butterfly Bracelet",
-                price: 1400,
-                image: "/static/img/jewelry/ECJ11.jpg",
-
-                altText: "Layered Butterfly Bracelet",
-            },
-            {
-                name: "Globe Simple Locket",
-                price: 2000,
-                image: "/static/img/jewelry/ECJ12.jpg",
-
-                altText: "Globe Simple Locket",
-            },
-            {
-                name: "Simple Earrings",
-                price: 700,
-                image: "/static/img/jewelry/ECJ24.jpg",
-
-                altText: "Simple Earrings",
-            },
-            {
-                name: "Friends Locket",
-                price: 2500,
-                image: "/static/img/jewelry/ECJ14.jpg",
-
-                altText: "Friends Locket",
-            },
-            {
-                name: "Pearl Necklaces 3-pc Set",
-                price: 2200,
-                image: "/static/img/jewelry/ECJ15.jpg",
-                altText: "Pearl Necklaces 3-pc Set",
-            },
-            {
-                name: "Gold jewelry Set",
-                price: 3500,
-                image: "/static/img/jewelry/ECJ25.jpg",
-                altText: "Gold jewelry Set",
-
-            },
-            {
-                name: "Low Cut Rubber Sole Shoes",
-                price: 4500,
-                image: "/static/img/shoes/ECS19.jpg"
-            },
-            {
-                name: "Sneaker Boot Heals",
-                price: 8000,
-                image: "/static/img/shoes/ECS3.jpg"
-            },
-            {
-                name: "Arch Fit Shoes",
-                price: 7000,
-                image: "/static/img/shoes/ECS4.jpg"
-            },
-            {
-                name: "Chunky Sole Casual Sneakers",
-                price: 5000,
-                image: "/static/img/shoes/ECS5.jpg"
-            },
-            {
-                name: "Athletic Shoes",
-                price: 6500,
-                image: "/static/img/shoes/ECS6.jpg"
-            },
-            {
-                name: "Easy Walking Shoes",
-                price: 3500,
-                image: "/static/img/shoes/ECS7.jpg"
-            },
-            {
-                name: "Smooth Step Shoes",
-                price: 4000,
-                image: "/static/img/shoes/ECS8.jpg"
-            },
-            {
-                name: "Premium Lightweight Running Shoes",
-                price: 5500,
-                image: "/static/img/shoes/ECS9.jpg"
-            },
-            {
-                name: "Lace Up Comfy Shoes",
-                price: 5000,
-                image: "/static/img/shoes/ECS10.jpg"
-            },
-            {
-                name: "Non-Slip Low-Top Sneaker",
-                price: 5000,
-                image: "/static/img/shoes/ECS11.jpg"
-            },
-            {
-                name: "Comfortable And Stylish Shoes",
-                price: 8000,
-                image: "/static/img/shoes/ECS12.jpg"
-            },
-            {
-                name: "Stylish and Trendy Sneakers",
-                price: 6000,
-                image: "/static/img/shoes/ECS13.jpg"
-            },
-            {
-                name: "Gradient Color Lightweight Shoes",
-                price: 6000,
-                image: "/static/img/shoes/ECS14.jpg"
-            },
-            {
-                name: "Comfortable Footwear",
-                price: 3000,
-                image: "/static/img/shoes/ECS15.jpg"
-            },
-            {
-                name: "Fashionable Unisex Shoes",
-                price: 5000,
-                image: "/static/img/shoes/ECS16.jpg"
-            },
-            {
-                name: "Flat Casual Shoes",
-                price: 4000,
-                image: "/static/img/shoes/ECS17.jpg"
-            },
-            {
-                image: "/static/img/watches/wat5.jpg",
-                name: "Apple Smart Watch",
-                price: 7000,
-            },
-            {
-                image: "/static/img/watches/wat1.jpg",
-                name: "Numeric Animated Dial Watch",
-                price: 9000,
-            },
-            {
-                image: "/static/img/watches/wat2.jpg",
-                name: "Pearl Dragonfly Decorated Watch",
-                price: 7000,
-            },
-            {
-                image: "/static/img/watches/wat3.jpg",
-                name: "Fashion Brand Wrist Watch",
-                price: 8000,
-            },
-            {
-                image: "/static/img/watches/wat4.jpg",
-                name: "Custom Gradient Apple Watch",
-                price: 7000,
-            },
-            {
-                image: "/static/img/watches/wat15.jpg",
-                name: "Floral Pattern Watch",
-                price: 5000,
-            },
-            {
-                image: "/static/img/watches/wat6.jpg",
-                name: "Simple Strap Watch",
-                price: 4000,
-            },
-            {
-                image: "/static/img/watches/wat7.jpg",
-                name: "Apple Custom Bracelet Watch",
-                price: 6000,
-            },
-            {
-                image: "/static/img/watches/wat8.jpg",
-                name: "Stylish Golden Bracelet Watch",
-                price: 6000,
-            },
-            {
-                image: "/static/img/watches/wat9.jpg",
-                name: "Square Dial Watch",
-                price: 5000,
-            },
-            {
-                image: "/static/img/watches/wat10.jpg",
-                name: "Metropolitan Quartz Watch",
-                price: 7000,
-            },
-            {
-                image: "/static/img/watches/wat11.jpg",
-                name: "Fashion Brand Wrist Watch",
-                price: 5000,
-            },
-            {
-                image: "/static/img/watches/wat12.jpg",
-                name: "", // Name not provided
-                price: "", // Price not provided
-            },
-
+const products = [
+{
+        name: "Simple and Fresh Style Bag",
+        price: 2500,
+        image: "{{ url_for('static', filename='img/bags/bag3.jpg') }}",
+        category: "Bags"
+    },
+    {
+        name: "Fresh Summer Bag",
+        price: 3000,
+        image: "{{ url_for('static', filename='img/bags/bag25.jpg') }}",
+        category: "Bags"
+    },
+    {
+        name: "Simple Leisure Wind Case Bag",
+        price: 3500,
+        image: "{{ url_for('static', filename='img/bags/bag19.jpg') }}",
+        category: "Bags"
+    },
+    {
+        name: "Beautiful Simple Fashion Bag",
+        price: 3000,
+        image: "{{ url_for('static', filename='img/bags/bag4.jpg') }}",
+        category: "Bags"
+    },
+    {
+        name: "Dreamy Drapes Bag",
+        price: 4500,
+        image: "{{ url_for('static', filename='img/bags/bag20.jpg') }}",
+        category: "Bags"
+    },
+    {
+        name: "Elegant Ego Bag",
+        price: 5000,
+        image: "{{ url_for('static', filename='img/bags/bag6.jpg') }}",
+        category: "Bags"
+    },
+    {
+        name: "Stylish Handbag Emporium",
+        price: 7000,
+        image: "{{ url_for('static', filename='img/bags/bag7.jpg') }}",
+        category: "Bags"
+    },
+    {
+        name: "Elegant Carry Collection",
+        price: 3500,
+        image: "{{ url_for('static', filename='img/bags/bag8.jpg') }}",
+        category: "Bags"
+    },
+    {
+        name: "Simple and Fresh Style Bag",
+        price: 2500,
+        image: "{{ url_for('static', filename='img/bags/bag2.jpg') }}",
+        category: "Bags"
+    },
+    {
+        name: "The Dapper Handbag",
+        price: 4000,
+        image: "{{ url_for('static', filename='img/bags/bag16.jpg') }}",
+        category: "Bags"
+    },
+    {
+        name: "LuxeLane Bag",
+        price: 6000,
+        image: "{{ url_for('static', filename='img/bags/bag10.jpg') }}",
+        category: "Bags"
+    },
+    {
+        name: "Carry Couture",
+        price: 3800,
+        image: "{{ url_for('static', filename='img/bags/bag17.jpg') }}",
+        category: "Bags"
+    },
+    {
+        name: "Luxe Bag Haven",
+        price: 6000,
+        image: "{{ url_for('static', filename='img/bags/bag13.jpg') }}",
+        category: "Bags"
+    },
+    {
+        name: "Beautiful Simple Handbag",
+        price: 3000,
+        image: "{{ url_for('static', filename='img/bags/bag23.jpg') }}",
+        category: "Bags"
+    },
+    {
+        name: "Fresh Summer Bag",
+        price: 4500,
+        image: "{{ url_for('static', filename='img/bags/bag15.jpg') }}",
+        category: "Bags"
+    },
+    {
+        name: "Dreamy Drapes Bag",
+        price: 4500,
+        image: "{{ url_for('static', filename='img/bags/bag18.jpg') }}",
+        category: "Bags"
+    },
+    {
+        name: "Timeless Prestige",
+        price: 4500,
+        image: "{{ url_for('static', filename='img/fragrances/per1.jpg') }}",
+        category: "Fragrances"
+    },
+    {
+        name: "Enchanted Essence",
+        price: 3500,
+        image: "{{ url_for('static', filename='img/fragrances/per3.jpg') }}",
+        category: "Fragrances"
+    },
+    {
+        name: "Scented Secrets",
+        price: 3000,
+        image: "{{ url_for('static', filename='img/fragrances/per19.jpg') }}",
+        category: "Fragrances"
+    },
+    {
+        name: "Serene Temptation",
+        price: 2500,
+        image: "{{ url_for('static', filename='img/fragrances/per22.jpg') }}",
+        category: "Fragrances"
+    },
+    {
+        name: "Whispering Petals",
+        price: 7000,
+        image: "{{ url_for('static', filename='img/fragrances/per6.jpg') }}",
+        category: "Fragrances"
+    },
+    {
+        name: "Velvet Veil",
+        price: 6000,
+        image: "{{ url_for('static', filename='img/fragrances/per7.jpg') }}",
+        category: "Fragrances"
+    },
+    {
+        name: "Twilight Mist",
+        price: 5500,
+        image: "{{ url_for('static', filename='img/fragrances/per8.jpg') }}",
+        category: "Fragrances"
+    },
+    {
+        name: "Captivating Cascade",
+        price: 6000,
+        image: "{{ url_for('static', filename='img/fragrances/per9.jpg') }}",
+        category: "Fragrances"
+    },
+    {
+        name: "Celestial Blossom",
+        price: 4500,
+        image: "{{ url_for('static', filename='img/fragrances/per10.jpg') }}",
+        category: "Fragrances"
+    },
+    {
+        name: "Scented Dreams",
+        price: 6000,
+        image: "{{ url_for('static', filename='img/fragrances/per11.jpg') }}",
+        category: "Fragrances"
+    },
+    {
+        name: "Timeless Essence",
+        price: 7000,
+        image: "{{ url_for('static', filename='img/fragrances/per12.jpg') }}",
+        category: "Fragrances"
+    },
+    {
+        name: "Sublime Infusion",
+        price: 5000,
+        image: "{{ url_for('static', filename='img/fragrances/per13.jpg') }}",
+        category: "Fragrances"
+    },
+    {
+        name: "Charming Bouquet",
+        price: 7000,
+        image: "{{ url_for('static', filename='img/fragrances/per14.jpg') }}",
+        category: "Fragrances"
+    },
+    {
+        name: "Secret Gardenia",
+        price: 8000,
+        image: "{{ url_for('static', filename='img/fragrances/per18.jpg') }}",
+        category: "Fragrances"
+    },
+    {
+        name: "Enchanting Whisper",
+        price: 5000,
+        image: "{{ url_for('static', filename='img/fragrances/per16.jpg') }}",
+        category: "Fragrances"
+    },
+    {
+        name: "Captivating Cascade",
+        price: 3000,
+        image: "{{ url_for('static', filename='img/fragrances/per17.jpg') }}",
+        category: "Fragrances"
+    },
+{
+        name: "Simple Kurti with Dupatta",
+        price: 3000,
+        image: "{{ url_for('static', filename='img/dresses/EC19.jpg') }}",
+        category: "Dresses"
+    },
+    {
+        name: "Anarkali Frock",
+        price: 3300,
+        image: "{{ url_for('static', filename='img/dresses/EC2.jpg') }}",
+        category: "Dresses"
+    },
+    {
+        name: "Light Embroided",
+        price: 4400,
+        image: "{{ url_for('static', filename='img/dresses/EC22.jpg') }}",
+        category: "Dresses"
+    },
+    {
+        name: "Casual Kurti",
+        price: 2800,
+        image: "{{ url_for('static', filename='img/dresses/EC4.jpg') }}",
+        category: "Dresses"
+    },
+    {
+        name: "Cotton Kurti",
+        price: 3500,
+        image: "{{ url_for('static', filename='img/dresses/EC5.jpg') }}",
+        category: "Dresses"
+    },
+    {
+        name: "Raw Silk Peplum with Dhaka Pajama",
+        price: 4400,
+        image: "{{ url_for('static', filename='img/dresses/EC23.jpg') }}",
+        category: "Dresses"
+    },
+    {
+        name: "Printed Kurti",
+        price: 2700,
+        image: "{{ url_for('static', filename='img/dresses/EC7.jpg') }}",
+        category: "Dresses"
+    },
+    {
+        name: "Classic Straight Cut Shalwar Kameez",
+        price: 4900,
+        image: "{{ url_for('static', filename='img/dresses/EC25.jpg') }}",
+        category: "Dresses"
+    },
+    {
+        name: "Casual Khaddar Printed Suit",
+        price: 4700,
+        image: "{{ url_for('static', filename='img/dresses/EC15.jpg') }}",
+        category: "Dresses"
+    },
+    {
+        name: "Chicken Suit with Embroidered",
+        price: 5000,
+        image: "{{ url_for('static', filename='img/dresses/EC10.jpg') }}",
+        category: "Dresses"
+    },
+    {
+        name: "Light Simple Kurti",
+        price: 2500,
+        image: "{{ url_for('static', filename='img/dresses/EC11.jpg') }}",
+        category: "Dresses"
+    },
+    {
+        name: "Formal Net Kurti with trouser",
+        price: 5000,
+        image: "{{ url_for('static', filename='img/dresses/EC12.jpg') }}",
+        category: "Dresses"
+    },
+    {
+        name: "Organza Dupatta Three-Piece Suit",
+        price: 3400,
+        image: "{{ url_for('static', filename='img/dresses/EC13.jpg') }}",
+        category: "Dresses"
+    },
+    {
+        name: "Black Printed Kurti with Chiffon Dupatta",
+        price: 4500,
+        image: "{{ url_for('static', filename='img/dresses/EC14.jpg') }}",
+        category: "Dresses"
+    },
+    {
+        name: "Traditional Kurta Pajama Set",
+        price: 6500,
+        image: "{{ url_for('static', filename='img/dresses/EC1.jpg') }}",
+        category: "Dresses"
+    },
+    {
+        name: "Simple Cotton Shirt",
+        price: 4400,
+        image: "{{ url_for('static', filename='img/dresses/EC16.jpg') }}",
+        category: "Dresses"
+    },
+    {
+        name: "Dior Necklace",
+        price: 4000,
+        image: "{{ url_for('static', filename='img/jewelry/ECJ1.jpg') }}",
+        category: "Jewelry"
+    },
+    {
+        name: "5-Piece jewelry Set",
+        price: 10000,
+        image: "{{ url_for('static', filename='img/jewelry/ECJ2.jpg') }}",
+        category: "Jewelry"
+    },
+    {
+        name: "Beige Simple Bracelet",
+        price: 1500,
+        image: "{{ url_for('static', filename='img/jewelry/ECJ6.jpg') }}",
+        category: "Jewelry"
+    },
+    {
+        name: "4-Piece jewelry set",
+        price: 12000,
+        image: "{{ url_for('static', filename='img/jewelry/ECJ4.jpg') }}",
+        category: "Jewelry"
+    },
+    {
+        name: "Simple Bracelet",
+        price: 1200,
+        image: "{{ url_for('static', filename='img/jewelry/ECJ5.jpg') }}",
+        category: "Jewelry"
+    },
+    {
+        name: "6-Piece jewelry Set",
+        price: 7000,
+        image: "{{ url_for('static', filename='img/jewelry/ECJ3.jpg') }}",
+        category: "Jewelry"
+    },
+    {
+        name: "Pearls Stylish Bracelet",
+        price: 2000,
+        image: "{{ url_for('static', filename='img/jewelry/ECJ7.jpg') }}",
+        category: "Jewelry"
+    },
+    {
+        name: "Crown Necklace With Earings",
+        price: 17000,
+        image: "{{ url_for('static', filename='img/jewelry/ECJ19.jpg') }}",
+        category: "Jewelry"
+    },
+    {
+        name: "White Butterfly Stylish Bracelet",
+        price: 1800,
+        image: "{{ url_for('static', filename='img/jewelry/ECJ9.jpg') }}",
+        category: "Jewelry"
+    },
+    {
+        name: "Rings Box",
+        price: 4000,
+        image: "{{ url_for('static', filename='img/jewelry/ECJ10.jpg') }}",
+        category: "Jewelry"
+    },
+    {
+        name: "Layered Butterfly Bracelet",
+        price: 1400,
+        image: "{{ url_for('static', filename='img/jewelry/ECJ11.jpg') }}",
+        category: "Jewelry"
+    },
+    {
+        name: "Globe Simple Locket",
+        price: 2000,
+        image: "{{ url_for('static', filename='img/jewelry/ECJ12.jpg') }}",
+        category: "Jewelry"
+    },
+    {
+        name: "Simple Earings",
+        price: 1300,
+        image: "{{ url_for('static', filename='img/jewelry/ECJ24.jpg') }}",
+        category: "Jewelry"
+    },
+    {
+        name: "Friends Locket",
+        price: 2500,
+        image: "{{ url_for('static', filename='img/jewelry/ECJ14.jpg') }}",
+        category: "Jewelry"
+    },
+    {
+        name: "Pearl Necklaces 3-piece Set",
+        price: 2200,
+        image: "{{ url_for('static', filename='img/jewelry/ECJ15.jpg') }}",
+        category: "Jewelry"
+    },
+    {
+        name: "Golden jewelry Set",
+        price: 3500,
+        image: "{{ url_for('static', filename='img/jewelry/ECJ25.jpg') }}",
+        category: "Jewelry"
+    },
+    {
+        name: "Low Cut Rubber Sole Shoes",
+        price: 4500,
+        image: "{{ url_for('static', filename='img/shoes/ECS19.jpg') }}",
+        category: "Shoes"
+    },
+    {
+        name: "Sneaker Boot Heals",
+        price: 8000,
+        image: "{{ url_for('static', filename='img/shoes/ECS3.jpg') }}",
+        category: "Shoes"
+    },
+    {
+        name: "Arch Fit Shoes",
+        price: 7000,
+        image: "{{ url_for('static', filename='img/shoes/ECS4.jpg') }}",
+        category: "Shoes"
+    },
+    {
+        name: "Chunky Sole Casual Sneakers",
+        price: 5000,
+        image: "{{ url_for('static', filename='img/shoes/ECS5.jpg') }}",
+        category: "Shoes"
+    },
+    {
+        name: "Athletic Shoes",
+        price: 6500,
+        image: "{{ url_for('static', filename='img/shoes/ECS6.jpg') }}",
+        category: "Shoes"
+    },
+    {
+        name: "Easy Walking Shoes",
+        price: 3500,
+        image: "{{ url_for('static', filename='img/shoes/ECS7.jpg') }}",
+        category: "Shoes"
+    },
+    {
+        name: "Smooth Step Shoes",
+        price: 4000,
+        image: "{{ url_for('static', filename='img/shoes/ECS8.jpg') }}",
+        category: "Shoes"
+    },
+    {
+        name: "Premium Lightweight Running Shoes",
+        price: 5500,
+        image: "{{ url_for('static', filename='img/shoes/ECS9.jpg') }}",
+        category: "Shoes"
+    },
+    {
+        name: "Non-Slip Low-Top Sneaker",
+        price: 5000,
+        image: "{{ url_for('static', filename='img/shoes/ECS11.jpg') }}",
+        category: "Shoes"
+    },
+    {
+        name: "Comfortable And Stylish Shoes",
+        price: 8000,
+        image: "{{ url_for('static', filename='img/shoes/ECS12.jpg') }}",
+        category: "Shoes"
+    },
+    {
+        name: "Stylish and Trendy Sneakers",
+        price: 6000,
+        image: "{{ url_for('static', filename='img/shoes/ECS13.jpg') }}",
+        category: "Shoes"
+    },
+    {
+        name: "Gradient Color Lightweight Shoes",
+        price: 6000,
+        image: "{{ url_for('static', filename='img/shoes/ECS14.jpg') }}",
+        category: "Shoes"
+    },
+    {
+        name: "Comfortable Footwear",
+        price: 3000,
+        image: "{{ url_for('static', filename='img/shoes/ECS15.jpg') }}",
+        category: "Shoes"
+    },
+    {
+        name: "Fashionable Unisex Shoes",
+        price: 5000,
+        image: "{{ url_for('static', filename='img/shoes/ECS16.jpg') }}",
+        category: "Shoes"
+    },
+    {
+        name: "Flat Casual Shoes",
+        price: 4000,
+        image: "{{ url_for('static', filename='img/shoes/ECS17.jpg') }}",
+        category: "Shoes"
+    },
+    {
+        name: "Lace Up Comfy Shoes",
+        price: 5000,
+        image: "{{ url_for('static', filename='img/shoes/ECS10.jpg') }}",
+        category: "Shoes"
+    },
+{
+        name: "Apple Smart Watch",
+        price: 7000,
+        image: "{{ url_for('static', filename='img/watches/wat5.jpg') }}",
+        category: "Watches"
+    },
+    {
+        name: "Numeric Animated Dial Watch",
+        price: 5000,
+        image: "{{ url_for('static', filename='img/watches/wat1.jpg') }}",
+        category: "Watches"
+    },
+    {
+        name: "Pearl Dragonfly Decorated Watch",
+        price: 7000,
+        image: "{{ url_for('static', filename='img/watches/wat2.jpg') }}",
+        category: "Watches"
+    },
+    {
+        name: "Fashion Brand Wrist Watch",
+        price: 8000,
+        image: "{{ url_for('static', filename='img/watches/wat3.jpg') }}",
+        category: "Watches"
+    },
+    {
+        name: "Custom Gradient Apple Watch",
+        price: 7000,
+        image: "{{ url_for('static', filename='img/watches/wat4.jpg') }}",
+        category: "Watches"
+    },
+    {
+        name: "Floral Pattern Watch",
+        price: 5000,
+        image: "{{ url_for('static', filename='img/watches/wat15.jpg') }}",
+        category: "Watches"
+    },
+    {
+        name: "Simple Strap Watch",
+        price: 4000,
+        image: "{{ url_for('static', filename='img/watches/wat6.jpg') }}",
+        category: "Watches"
+    },
+    {
+        name: "Apple Custom Bracelet Watch",
+        price: 8000,
+        image: "{{ url_for('static', filename='img/watches/wat7.jpg') }}",
+        category: "Watches"
+    },
+    {
+        name: "Stylish Golden Bracelet Watch",
+        price: 6000,
+        image: "{{ url_for('static', filename='img/watches/wat8.jpg') }}",
+        category: "Watches"
+    },
+    {
+        name: "Square Dial Watch",
+        price: 5000,
+        image: "{{ url_for('static', filename='img/watches/wat9.jpg') }}",
+        category: "Watches"
+    },
+    {
+        name: "Metropolitan Quartz Watch",
+        price: 4000,
+        image: "{{ url_for('static', filename='img/watches/wat10.jpg') }}",
+        category: "Watches"
+    },
+    {
+        name: "Fashion Brand Wrist Watch",
+        price: 5000,
+        image: "{{ url_for('static', filename='img/watches/wat11.jpg') }}",
+        category: "Watches"
+    },
+    {
+        name: "Elegant 32 MM Dial Watch",
+        price: 5000,
+        image: "{{ url_for('static', filename='img/watches/wat12.jpg') }}",
+        category: "Watches"
+    },
+    {
+        name: "Luxury Quartz Bracelet Watch",
+        price: 6500,
+        image: "{{ url_for('static', filename='img/watches/wat13.jpg') }}",
+        category: "Watches"
+    },
+    {
+        name: "Simple Strap Watch",
+        price: 3500,
+        image: "{{ url_for('static', filename='img/watches/wat14.jpg') }}",
+        category: "Watches"
+    },
+    {
+        name: "Elegant RoseGold Watch",
+        price: 5500,
+        image: "{{ url_for('static', filename='img/watches/wat16.jpg') }}",
+        category: "Watches"
+    },
         ];
 
         // Get the products container

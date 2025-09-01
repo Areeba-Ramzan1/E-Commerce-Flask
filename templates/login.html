@@ -19,10 +19,10 @@
 
             <!-- Menu Items (Hidden on Mobile) -->
             <ul class="hidden md:flex space-x-6">
-                <li><a href="/#about" class="hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i> About</a></li>
-                <li><a href="/#contact" class="hover:text-green-200"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
-                <li><a href="/signup" class="hover:text-green-200"><i class="fa fa-fw fa-user"></i> Signup</a></li>
-                <li><a href="/search" class="hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a></li>
+                <li><a href="{{ url_for('home') }}#about" class="hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i> About</a></li>
+                <li><a href="{{ url_for('home') }}#contact" class="hover:text-green-200"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+                <li><a href="{{ url_for('signup') }}" class="hover:text-green-200"><i class="fa fa-fw fa-user"></i> Signup</a></li>
+                <li><a href="{{ url_for('search') }}" class="hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a></li>
             </ul>
 
             <!-- Mobile Menu Button -->
@@ -33,10 +33,10 @@
 
         <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="hidden md:hidden mt-4 bg-green-800 text-white p-4 space-y-4">
-            <a href="#about" class="block hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i> About</a>
-            <a href="#contact" class="block hover:text-green-200"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-            <a href="/signup" class="block hover:text-green-200"><i class="fa fa-fw fa-user"></i> Signup</a>
-            <a href="/search" class="block hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a>
+            <a href="{{ url_for('home') }}#about" class="block hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i> About</a>
+            <a href="{{ url_for('home') }}#contact" class="block hover:text-green-200"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+            <a href="{{ url_for('signup') }}" class="block hover:text-green-200"><i class="fa fa-fw fa-user"></i> Signup</a>
+            <a href="{{ url_for('search') }}" class="block hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a>
         </div>
     </nav>
 
@@ -64,7 +64,7 @@
             <div id="message" class="mt-4 text-center"></div>
 
             <div class="links mt-4 text-center text-gray-600">
-                <p>Don't have an account? <a href="/signup" class="text-green-600 hover:underline">Sign Up Here!</a></p>
+                <p>Don't have an account? <a href="{{ url_for('signup') }}" class="text-green-600 hover:underline">Sign Up Here!</a></p>
             </div>
         </div>
     </div>
@@ -79,8 +79,8 @@
 
                 <!-- Navigation Links -->
                 <div class="flex space-x-6 mt-4 sm:mt-0">
-                    <a href="/#about" class="text-white hover:text-white">About</a>
-                    <a href="/#contact" class="text-white hover:text-white">Contact</a>
+                    <a href="{{ url_for('home') }}#about" class="text-white hover:text-white">About</a>
+                    <a href="{{ url_for('home') }}#contact" class="text-white hover:text-white">Contact</a>
                 </div>
 
                 <!-- Social Media Links -->

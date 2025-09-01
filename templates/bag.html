@@ -14,12 +14,13 @@
                 <i class="fa fa-fw fa-shopping-bag"></i> FashionDash.
             </a>
             <ul class="hidden md:flex space-x-6">
-                <li><a href="/home#about" class="hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i> About</a></li>
-                <li><a href="/home#contact" class="hover:text-green-200"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
-                <li><a href="/categories" class="hover:text-green-200"><i class="fa fa-fw fa-bars"></i> Categories</a></li>
-                <li><a href="/login" class="hover:text-green-200"><i class="fa fa-fw fa-user"></i> Login</a></li>
-                <li><a href="/search" class="hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a></li>
-                <li><a href="/cart" class="hover:text-green-200"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a></li>
+                <li><a href="{{ url_for('home') }}#about" class="hover:text-green-200"><i class="fa fa-fw fa-info-circle"></i> About</a></li>
+                <li><a href="{{ url_for('home') }}#contact" class="hover:text-green-200"><i class="fa fa-fw fa-envelope"></i> Contact</a></li>
+                <li><a href="{{ url_for('categories') }}" class="hover:text-green-200"><i class="fa fa-fw fa-bars"></i> Categories</a></li>
+                <li><a href="{{ url_for('login') }}" class="hover:text-green-200"><i class="fa fa-fw fa-user"></i> Login</a></li>
+                <li><a href="{{ url_for('search') }}" class="hover:text-green-200"><i class="fa fa-fw fa-search"></i> Search</a></li>
+                <li><a href="{{ url_for('cart') }}" class="hover:text-green-200"><i class="fa fa-fw fa-shopping-cart"></i> Cart</a></li>
+
             </ul>
         </div>
     </nav>
@@ -35,7 +36,7 @@
                     <!-- Example for one card -->
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/bags/bag3.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/bags/bag3.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Simple and Fresh Style Bag</h3>
@@ -46,18 +47,18 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/bags/bag25.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/bags/bag25.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
-                            <h3 class="text-sm text-gray-800 font-bold">Simple and Fresh Style Bag</h3>
+                            <h3 class="text-sm text-gray-800 font-bold">Fresh Summer Bag</h3>
                             <p class="text-sm font-medium text-black">3000</p>
-                            <button onclick='addToCart("Simple and Fresh Style Bag", 3000)' 
+                            <button onclick='addToCart("Fresh Summer Bag", 3000)'
                                     class='mt-2 px-4 py-2 bg-green-800 text-white rounded hover:bg-green-600'>Add to Cart</button>
                         </div>
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/bags/bag19.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/bags/bag19.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold"> Simple Leisure Wind Case Bag</h3>
@@ -68,7 +69,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/bags/bag4.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/bags/bag4.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Beautiful Simple Fashion Bag</h3>
@@ -79,7 +80,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/bags/bag20.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/bags/bag20.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Dreamy Drapes Bag</h3>
@@ -90,7 +91,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/bags/bag6.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/bags/bag6.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold"> Elegant Ego Bag</h3>
@@ -101,7 +102,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/bags/bag7.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/bags/bag7.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Stylish Handbag Emporium</h3>
@@ -112,7 +113,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/bags/bag8.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/bags/bag8.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Elegant Carry Collection</h3>
@@ -123,7 +124,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/bags/bag2.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/bags/bag2.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Simple and Fresh Style Bag</h3>
@@ -134,7 +135,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/bags/bag16.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/bags/bag16.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">The Dapper Handbag</h3>
@@ -145,7 +146,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/bags/bag10.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/bags/bag10.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">LuxeLane Bag</h3>
@@ -156,29 +157,29 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/bags/bag17.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/bags/bag17.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
-                            <h3 class="text-sm text-gray-800 font-bold">LuxeLane Bag</h3>
+                            <h3 class="text-sm text-gray-800 font-bold">Carry Couture</h3>
                             <p class="text-sm font-medium text-black">3800</p>
-                            <button onclick='addToCart("Simple and Fresh Style Bag", 3800)' 
+                            <button onclick='addToCart("Carry Couture", 3800)'
                                     class='mt-2 px-4 py-2 bg-green-800 text-white rounded hover:bg-green-600'>Add to Cart</button>
                         </div>
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/bags/bag13.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/bags/bag13.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
-                            <h3 class="text-sm text-gray-800 font-bold">Elegant Carry Collection</h3>
-                            <p class="text-sm font-medium text-black">3500</p>
-                            <button onclick='addToCart("Elegant Carry Collection", 3500)' 
+                            <h3 class="text-sm text-gray-800 font-bold">Luxe Bag Haven</h3>
+                            <p class="text-sm font-medium text-black">6000</p>
+                            <button onclick='addToCart("Luxe Bag Haven", 6000)'
                                     class='mt-2 px-4 py-2 bg-green-800 text-white rounded hover:bg-green-600'>Add to Cart</button>
                         </div>
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/bags/bag23.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/bags/bag23.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Beatiful Simple Handbag</h3>
@@ -189,7 +190,7 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/bags/bag15.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/bags/bag15.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
                             <h3 class="text-sm text-gray-800 font-bold">Fresh Summer Bag</h3>
@@ -200,12 +201,12 @@
                     </div>
                     <div class="group relative product">
                         <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                            <img src="/static/img/bags/bag18.jpg" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
+                            <img src="{{ url_for('static', filename='img/bags/bag18.jpg') }}" alt="Product Image" class="h-full w-full object-cover object-center lg:h-full lg:w-full">
                         </div>
                         <div class="mt-4 flex flex-col justify-between">
-                            <h3 class="text-sm text-gray-800 font-bold">Simple and Fresh Style Bag</h3>
-                            <p class="text-sm font-medium text-black">3000</p>
-                            <button onclick='addToCart("Fresh Style Bag", 3000)' 
+                            <h3 class="text-sm text-gray-800 font-bold">Dreamy Drapes Bag</h3>
+                            <p class="text-sm font-medium text-black">4500</p>
+                            <button onclick='addToCart("Dreamy Drapes Bag", 4500)'
                                     class='mt-2 px-4 py-2 bg-green-800 text-white rounded hover:bg-green-600'>Add to Cart</button>
                         </div>
                     </div>
@@ -227,8 +228,8 @@
 
                 <!-- Navigation Links -->
                 <div class="flex space-x-6 mt-4 sm:mt-0">
-                    <a href="/home#about" class="text-white hover:text-white">About</a>
-                    <a href="/home#contact" class="text-white hover:text-white">Contact</a>
+                    <a href="{{ url_for('home') }}#about" class="text-white hover:text-white">About</a>
+                    <a href="{{ url_for('home') }}#contact" class="text-white hover:text-white">Contact</a>
                 </div>
 
                 <!-- Social Media Links -->
@@ -259,7 +260,7 @@
             </div>
         </div>
     </footer>
-<script src="/static/JS/new.js"></script>
+<script src="{{ url_for('static', filename='JS/new.js') }}"></script>
 
 </body>
 </html>
